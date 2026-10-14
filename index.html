@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1120" />
+    <meta name="description" content="LinguaAI 基于生成式人工智能的个性化英语学习助手" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>LinguaAI · AI English Coach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand-row">
+          <a class="brand" href="#home" aria-label="LinguaAI 首页">
+            <span class="brand-mark"><span></span><span></span><span></span></span>
+            <span class="brand-name">Lingua<span>AI</span></span>
+          </a>
+          <button class="icon-btn sidebar-close" id="sidebarClose" aria-label="关闭菜单" type="button"><span data-icon="close"></span></button>
+        </div>
+
+        <div class="profile-card">
+          <div class="avatar avatar-gradient">LM</div>
+          <div class="profile-copy">
+            <strong>Lin · Explorer</strong>
+            <span>连续学习 12 天</span>
+          </div>
+          <span class="status-dot" title="在线"></span>
+        </div>
+
+        <p class="nav-label">学习空间</p>
+        <nav class="main-nav" aria-label="主导航">
+          <a href="#home" class="nav-item active" data-route="home"><span class="nav-icon" data-icon="grid"></span><span>学习总览</span></a>
+          <a href="#speaking" class="nav-item" data-route="speaking"><span class="nav-icon" data-icon="mic"></span><span>AI 口语陪练</span><span class="nav-badge">AI</span></a>
+          <a href="#writing" class="nav-item" data-route="writing"><span class="nav-icon" data-icon="pen"></span><span>AI 作文批改</span></a>
+          <a href="#plan" class="nav-item" data-route="plan"><span class="nav-icon" data-icon="calendar"></span><span>智能学习计划</span></a>
+          <a href="#analytics" class="nav-item" data-route="analytics"><span class="nav-icon" data-icon="chart"></span><span>学习数据</span></a>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+        <div class="streak-card">
+          <div class="streak-icon"><span data-icon="spark"></span></div>
+          <div>
+            <strong>保持你的节奏</strong>
+            <p>再学习 8 分钟即可完成今日目标</p>
+          </div>
+          <span class="mini-arrow" data-icon="arrow"></span>
+        </div>
+        <div class="sidebar-bottom">
+          <a href="#settings" class="nav-item muted-nav" data-route="settings"><span class="nav-icon" data-icon="settings"></span><span>偏好设置</span></a>
+          <button class="nav-item logout-btn" id="logoutBtn" type="button"><span class="nav-icon" data-icon="logout"></span><span>退出登录</span></button>
+        </div>
+      </aside>
+
+      <div class="main-wrap">
+        <header class="topbar">
+          <button class="icon-btn menu-btn" id="menuBtn" aria-label="打开菜单" type="button"><span data-icon="menu"></span></button>
+          <div class="breadcrumb"><span class="crumb-muted">LinguaAI</span><span class="crumb-slash">/</span><span id="pageTitle">学习总览</span></div>
+          <div class="topbar-actions">
+            <button class="icon-btn notification-btn" id="notifyBtn" aria-label="通知" type="button"><span data-icon="bell"></span><i></i></button>
+            <div class="top-profile" id="topProfile">
+              <div class="avatar avatar-small">LM</div>
+              <span>Lin Mei</span>
+              <span class="chevron" data-icon="chevron"></span>
+              <div class="profile-menu" id="profileMenu">
+                <button type="button" data-toast="个人资料功能即将上线"><span data-icon="user"></span>个人资料</button>
+                <button type="button" data-toast="主题偏好已保存"><span data-icon="sun"></span>外观设置</button>
+                <button type="button" id="profileLogout"><span data-icon="logout"></span>退出登录</button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="content" id="appMain">
+          <section class="page-view active" id="page-home" data-page="home">
+            <div class="hero-grid">
+              <div class="hero-copy">
+                <div class="eyebrow"><span class="eyebrow-dot"></span> AI PERSONAL ENGLISH COACH</div>
+                <h1>让每一次<br /><em>表达</em> 都更自信。</h1>
+                <p class="hero-description">LinguaAI 了解你的目标、记录你的进步，用生成式 AI 把碎片时间变成真正有效的英语成长。</p>
+                <div class="hero-actions">
+                  <a class="btn btn-primary" href="#speaking"><span>开始今天的学习</span><span data-icon="arrow"></span></a>
+                  <button class="text-btn" id="tourBtn" type="button"><span class="play-mini" data-icon="play"></span>看看它如何工作</button>
+                </div>
+                <div class="hero-trust"><div class="trust-avatars"><span>Y</span><span>S</span><span>J</span><span>+</span></div><span>已有 <strong>2,486</strong> 位学习者开始改变</span></div>
+              </div>
+              <div class="hero-visual">
+                <div class="glow-orb orb-a"></div><div class="glow-orb orb-b"></div>
+                <div class="hero-panel panel-glass">
+                  <div class="panel-topline"><span class="live-pill"><i></i> AI COACH 在线</span><span class="panel-time">今日 09:41</span></div>
+                  <div class="coach-message"><div class="coach-avatar"><span data-icon="spark"></span></div><div><span class="message-label">LinguaAI</span><p>早上好，Lin！今天准备好练习 <strong>Travel Stories</strong> 了吗？</p></div></div>
+                  <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="hero-score"><div><span>本周口语表现</span><strong>86<span>/100</span></strong></div><div class="score-trend"><span data-icon="trend"></span> +12.8%</div></div>
+                  <div class="floating-chip chip-one"><span data-icon="check"></span> 语法更自然了</div>
+                  <div class="floating-chip chip-two"><span data-icon="spark"></span> 个性化建议</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-heading home-heading"><div><p class="section-kicker">LEARN SMARTER</p><h2>一个平台，覆盖你的每一步</h2></div><a href="#analytics" class="link-btn">查看学习数据 <span data-icon="arrow"></span></a></div>
+            <div class="feature-grid">
+              <a class="feature-card feature-purple" href="#speaking"><div class="feature-icon"><span data-icon="mic"></span></div><div><h3>AI 口语陪练</h3><p>和不怕犯错的 AI 说英语，获得实时、可执行的反馈。</p></div><span class="card-arrow" data-icon="arrow"></span><div class="feature-number">01</div></a>
+              <a class="feature-card feature-blue" href="#writing"><div class="feature-icon"><span data-icon="pen"></span></div><div><h3>AI 作文批改</h3><p>不止找错，更帮你把每一个句子写得更有力量。</p></div><span class="card-arrow" data-icon="arrow"></span><div class="feature-number">02</div></a>
+              <a class="feature-card feature-orange" href="#plan"><div class="feature-icon"><span data-icon="calendar"></span></div><div><h3>智能学习计划</h3><p>根据目标和时间，为你生成刚刚好的每日挑战。</p></div><span class="card-arrow" data-icon="arrow"></span><div class="feature-number">03</div></a>
+            </div>
+            <div class="home-lower-grid">
+              <div class="quote-card"><div class="quote-mark">“</div><p>真正的进步，不是记住更多规则，而是敢于用英语表达更多自己。</p><span>— LinguaAI 学习理念</span></div>
+              <div class="mini-progress-card"><div class="mini-card-head"><div><p class="section-kicker">WEEKLY GOAL</p><h3>本周学习目标</h3></div><span class="circle-complete">72%</span></div><div class="progress-track"><span style="width:72%"></span></div><div class="mini-progress-meta"><span>已完成 18 / 25 项任务</span><span>还差 7 项</span></div></div>
+            </div>
+          </section>
+
+          <section class="page-view" id="page-speaking" data-page="speaking">
+            <div class="page-intro"><div><p class="section-kicker">SPEAKING STUDIO</p><h1>和 AI 说，<em>自信表达。</em></h1><p>没有尴尬、没有打断。每一次练习都将变成下一次进步。</p></div><div class="intro-pill"><span class="pulse-dot"></span> AI 语音引擎已就绪</div></div>
+            <div class="speaking-layout">
+              <div class="chat-card card-surface">
+                <div class="chat-head"><div class="coach-avatar large"><span data-icon="spark"></span></div><div><h3>Travel Stories</h3><p><span class="online-dot"></span> LinguaAI Coach · 随时回应</p></div><button class="icon-btn more-btn" type="button" data-toast="更多练习主题即将上线"><span data-icon="more"></span></button></div>
+                <div class="chat-messages" id="chatMessages">
+                  <div class="message-row ai-row"><div class="chat-mini-avatar"><span data-icon="spark"></span></div><div class="bubble ai-bubble"><p>Hey Lin! Tell me about a place you have always wanted to visit. Why does it interest you?</p><span class="message-time">09:40</span></div></div>
+                  <div class="message-row user-row"><div class="bubble user-bubble"><p>I have always wanted to visit Iceland. I like its quiet nature and beautiful northern lights.</p><span class="message-time">09:41 · 已发送</span></div></div>
+                  <div class="message-row ai-row"><div class="chat-mini-avatar"><span data-icon="spark"></span></div><div class="bubble ai-bubble"><p>That sounds amazing! Try adding one detail: <strong>“I’m fascinated by…”</strong> It will make your answer feel more vivid.</p><span class="message-time">09:41</span></div></div>
+                </div>
+                <div class="suggestion-row"><button type="button" class="suggestion" data-suggestion="I’m fascinated by the northern lights because they feel magical.">I’m fascinated by…</button><button type="button" class="suggestion" data-suggestion="The first thing I would do is explore the local culture.">The first thing I would do…</button></div>
+                <form class="chat-input-wrap" id="chatForm"><button type="button" class="voice-input" id="voiceBtn" aria-label="模拟语音输入"><span data-icon="mic"></span></button><input id="chatInput" type="text" autocomplete="off" placeholder="用英文回复 AI…" aria-label="输入英文回复" /><button class="send-btn" type="submit" aria-label="发送"><span data-icon="arrow-up"></span></button></form>
+              </div>
+              <aside class="speaking-side">
+                <div class="score-card card-surface"><div class="score-card-head"><div><p class="section-kicker">SESSION SCORE</p><h3>本次表现</h3></div><span class="score-badge">A-</span></div><div class="big-score"><strong id="speakingScore">86</strong><span>/ 100</span></div><div class="score-bars"><div class="score-line"><span>语法准确度</span><div class="tiny-track"><i style="width:88%"></i></div><b>88</b></div><div class="score-line"><span>词汇丰富度</span><div class="tiny-track"><i style="width:76%"></i></div><b>76</b></div><div class="score-line"><span>表达流畅度</span><div class="tiny-track"><i style="width:84%"></i></div><b>84</b></div></div></div>
+                <div class="feedback-card card-surface"><div class="card-title-row"><h3>AI 即时建议</h3><span class="spark-label"><span data-icon="spark"></span> Live</span></div><div class="feedback-item"><span class="feedback-icon good"><span data-icon="check"></span></span><div><strong>语法评价</strong><p>句子结构清晰，时态使用准确。可以尝试连接词让表达更连贯。</p></div></div><div class="feedback-item"><span class="feedback-icon info"><span data-icon="sound"></span></span><div><strong>发音建议</strong><p><b>beautiful</b> 的重音在第一个音节：/ˈbjuː.tɪ.fəl/</p></div></div><button class="outline-btn full-btn" type="button" data-toast="更多发音练习已加入今日计划">练习这个表达 <span data-icon="arrow"></span></button></div>
+                <div class="topic-card"><div><span class="topic-label">NEXT TOPIC</span><h4>Describe your perfect weekend</h4><p>预计练习 5 分钟</p></div><span data-icon="arrow"></span></div>
+              </aside>
+            </div>
+          </section>
+
+          <section class="page-view" id="page-writing" data-page="writing">
+            <div class="page-intro"><div><p class="section-kicker">WRITING LAB</p><h1>让每个句子，<em>更有力量。</em></h1><p>AI 不替你写作，只帮你看见更好的表达可能。</p></div><div class="intro-pill purple-pill"><span data-icon="spark"></span> 智能批改模式</div></div>
+            <div class="writing-layout">
+              <div class="editor-card card-surface"><div class="editor-toolbar"><div class="toolbar-doc"><span class="doc-icon" data-icon="file"></span><div><strong>My Travel Story</strong><span>最后编辑于刚刚</span></div></div><div class="toolbar-actions"><span class="word-count" id="wordCount">0 words</span><button class="icon-btn" type="button" data-toast="格式工具已准备好"><span data-icon="more"></span></button></div></div><textarea id="essayInput" placeholder="Start writing in English…\n\nShare a memory, a dream, or a place you want to explore. LinguaAI will help you make it clearer and more expressive." aria-label="输入英文作文"></textarea><div class="editor-bottom"><span><span class="saved-dot"></span> 自动保存已开启</span><button class="btn btn-primary analyze-btn" id="analyzeBtn" type="button"><span data-icon="spark"></span> 开始 AI 分析</button></div></div>
+              <div class="writing-result" id="writingResult"><div class="empty-result card-surface"><div class="empty-orbit"><span data-icon="spark"></span></div><h3>你的表达值得被认真对待</h3><p>写下至少一段英文，点击“开始 AI 分析”，查看语法、表达和词汇建议。</p><div class="result-hints"><span><span data-icon="check"></span> 语法检查</span><span><span data-icon="check"></span> 句式升级</span><span><span data-icon="check"></span> 词汇拓展</span></div></div></div>
+            </div>
+          </section>
+
+          <section class="page-view" id="page-plan" data-page="plan">
+            <div class="page-intro"><div><p class="section-kicker">YOUR LEARNING PATH</p><h1>为你的目标，<em>定制节奏。</em></h1><p>告诉我们你想去哪里，LinguaAI 帮你规划下一步。</p></div><div class="intro-pill orange-pill"><span data-icon="calendar"></span> 2024 / WEEK 24</div></div>
+            <div class="plan-layout"><div class="plan-form card-surface"><div class="form-heading"><div class="form-step">01</div><div><h3>先了解你的目标</h3><p>计划越贴近你，越容易坚持下去。</p></div></div><form id="planForm"><label>目前的英语水平<select id="levelSelect"><option value="A2">A2 · 初级</option><option value="B1" selected>B1 · 中级</option><option value="B2">B2 · 中高级</option><option value="C1">C1 · 高级</option></select></label><label>你想实现什么目标<select id="goalSelect"><option value="travel" selected>出国旅行时自然交流</option><option value="exam">提升考试成绩</option><option value="work">自信进行职场沟通</option><option value="interest">培养长期英语习惯</option></select></label><label>每天可以学习多久<div class="time-options" id="timeOptions"><button type="button" data-time="15">15 分钟</button><button type="button" class="selected" data-time="30">30 分钟</button><button type="button" data-time="45">45 分钟</button><button type="button" data-time="60">60 分钟</button></div></label><button class="btn btn-primary full-btn" type="submit"><span data-icon="spark"></span> 生成我的学习计划</button></form></div><div class="plan-output" id="planOutput"><div class="plan-summary card-surface"><div class="plan-summary-top"><div><p class="section-kicker">PERSONALIZED FOR LIN</p><h3>你的 7 天成长计划</h3><p id="planSummaryText">围绕“自然交流”，每天30分钟，循序提升。</p></div><span class="plan-stamp"><span data-icon="check"></span> READY</span></div><div class="today-task"><div class="task-date"><span>今日</span><strong>24</strong><small>JUN</small></div><div class="task-content"><span class="task-label">TODAY'S FOCUS · 30 MIN</span><h4>Describe a place you love</h4><p>口语热身 8 min · 主题词汇 10 min · AI 对话 12 min</p><div class="task-progress"><span style="width:64%"></span></div></div><button class="task-play" type="button" data-toast="今日任务已开始"><span data-icon="play"></span></button></div><div class="week-plan"><div class="week-title"><h4>本周节奏</h4><span>每周 5 次学习</span></div><div class="week-days"><div class="week-day complete"><span>一</span><i data-icon="check"></i></div><div class="week-day complete"><span>二</span><i data-icon="check"></i></div><div class="week-day active-day"><span>三</span><i></i></div><div class="week-day"><span>四</span><i></i></div><div class="week-day"><span>五</span><i></i></div><div class="week-day rest"><span>六</span><small>休</small></div><div class="week-day rest"><span>日</span><small>休</small></div></div></div></div><div class="plan-tip"><span class="tip-icon" data-icon="bulb"></span><p><strong>AI 小提醒：</strong>把今天学到的 <em>fascinated by</em> 用在一次真实对话里，记忆会更牢。</p></div></div></div>
+          </section>
+
+          <section class="page-view" id="page-analytics" data-page="analytics">
+            <div class="page-intro analytics-intro"><div><p class="section-kicker">YOUR PROGRESS</p><h1>每一步，都算数。</h1><p>这是你和 LinguaAI 一起坚持的第 12 天。</p></div><div class="date-filter"><button class="active" type="button">本周</button><button type="button">本月</button><button type="button">全部</button></div></div>
+            <div class="stat-grid"><div class="stat-card card-surface"><div class="stat-icon purple-bg"><span data-icon="calendar"></span></div><div><span>学习天数</span><strong>12 <small>天</small></strong><p class="positive"><span data-icon="trend"></span> 连续打卡中</p></div></div><div class="stat-card card-surface"><div class="stat-icon blue-bg"><span data-icon="book"></span></div><div><span>掌握词汇</span><strong>486 <small>词</small></strong><p class="positive"><span data-icon="trend"></span> 本周 +64</p></div></div><div class="stat-card card-surface"><div class="stat-icon orange-bg"><span data-icon="mic"></span></div><div><span>口语评分</span><strong>86 <small>/100</small></strong><p class="positive"><span data-icon="trend"></span> 较上周 +12.8%</p></div></div><div class="stat-card card-surface"><div class="stat-icon green-bg"><span data-icon="clock"></span></div><div><span>累计学习</span><strong>8.4 <small>小时</small></strong><p class="neutral">平均每天 42 分钟</p></div></div></div>
+            <div class="charts-grid"><div class="chart-card card-surface"><div class="chart-head"><div><p class="section-kicker">SPEAKING SCORE</p><h3>口语表现趋势</h3></div><div class="chart-legend"><span><i></i>我的表现</span><span class="legend-muted"><i></i>目标分数</span></div></div><div class="line-chart"><div class="y-labels"><span>100</span><span>80</span><span>60</span><span>40</span><span>20</span></div><svg viewBox="0 0 680 250" preserveAspectRatio="none" role="img" aria-label="口语评分从62提升到86的折线图"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#8b7cff" stop-opacity=".28"/><stop offset="100%" stop-color="#8b7cff" stop-opacity="0"/></linearGradient></defs><g class="chart-grid-lines"><line x1="0" y1="20" x2="680" y2="20"/><line x1="0" y1="72" x2="680" y2="72"/><line x1="0" y1="124" x2="680" y2="124"/><line x1="0" y1="176" x2="680" y2="176"/><line x1="0" y1="228" x2="680" y2="228"/></g><path class="chart-area" d="M0,177 C36,171 57,165 86,160 S141,148 171,153 S226,128 257,131 S311,112 343,120 S395,100 429,104 S479,85 514,90 S568,67 600,74 S649,55 680,58 L680,228 L0,228 Z"/><path class="chart-line" d="M0,177 C36,171 57,165 86,160 S141,148 171,153 S226,128 257,131 S311,112 343,120 S395,100 429,104 S479,85 514,90 S568,67 600,74 S649,55 680,58"/><g class="chart-dots"><circle cx="0" cy="177" r="4"/><circle cx="86" cy="160" r="4"/><circle cx="171" cy="153" r="4"/><circle cx="257" cy="131" r="4"/><circle cx="343" cy="120" r="4"/><circle cx="429" cy="104" r="4"/><circle cx="514" cy="90" r="4"/><circle cx="600" cy="74" r="4"/><circle cx="680" cy="58" r="5"/></g></svg><div class="x-labels"><span>6/16</span><span>6/17</span><span>6/18</span><span>6/19</span><span>6/20</span><span>6/21</span><span>6/22</span><span>6/23</span><span>今天</span></div></div></div><div class="activity-card card-surface"><div class="chart-head"><div><p class="section-kicker">ACTIVITY</p><h3>学习组成</h3></div><button class="icon-btn" type="button" data-toast="更多统计即将上线"><span data-icon="more"></span></button></div><div class="donut-wrap"><div class="donut"><div><strong>8.4</strong><span>小时</span></div></div><div class="donut-legend"><div><i class="legend-purple"></i><span>口语练习</span><b>42%</b></div><div><i class="legend-blue"></i><span>词汇积累</span><b>28%</b></div><div><i class="legend-orange"></i><span>作文批改</span><b>18%</b></div><div><i class="legend-gray"></i><span>其他</span><b>12%</b></div></div></div><div class="weekly-mini"><span>完成本周目标</span><strong>72%</strong><div class="progress-track"><i style="width:72%"></i></div></div></div></div>
+            <div class="insight-banner"><div class="insight-spark"><span data-icon="spark"></span></div><div><span class="section-kicker">LINGUAAI INSIGHT</span><p>你在周三和周四的口语表现最好。尝试把学习时间固定在 <strong>晚上 8:00</strong>，持续你的高效节奏。</p></div><button class="outline-btn" type="button" data-toast="学习提醒已设置">设置提醒 <span data-icon="arrow"></span></button></div>
+          </section>
+
+          <section class="page-view" id="page-settings" data-page="settings"><div class="page-intro"><div><p class="section-kicker">SETTINGS</p><h1>调整你的学习空间。</h1><p>让 LinguaAI 更贴近你的日常。</p></div></div><div class="settings-card card-surface"><div class="settings-row"><div><h3>每日学习提醒</h3><p>在你最容易坚持的时间收到提示</p></div><label class="switch"><input type="checkbox" checked /><span></span></label></div><div class="settings-row"><div><h3>AI 语音风格</h3><p>选择你喜欢的陪练声音</p></div><select><option>Warm & Clear</option><option>Calm & Focused</option></select></div><div class="settings-row"><div><h3>学习目标</h3><p>自然交流 · 每天 30 分钟</p></div><button class="outline-btn" type="button" data-toast="请前往智能学习计划修改目标">修改计划</button></div></div></section>
+        </main>
+
+        <footer class="footer"><span>© 2026 LinguaAI</span><span class="footer-tagline">Learn with curiosity. Speak with confidence.</span><div><button type="button" data-toast="隐私说明即将上线">隐私</button><button type="button" data-toast="帮助中心即将上线">帮助</button></div></footer>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="loginModal" aria-hidden="true"><div class="login-modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle"><button class="modal-close icon-btn" id="loginClose" aria-label="关闭登录窗口" type="button"><span data-icon="close"></span></button><div class="login-logo"><span class="brand-mark"><span></span><span></span><span></span></span></div><p class="section-kicker">WELCOME BACK</p><h2 id="loginTitle">继续你的学习旅程</h2><p class="login-subtitle">登录后，LinguaAI 会记住每一次进步。</p><form id="loginForm"><label>邮箱地址<input type="email" value="lin@example.com" required /></label><label>密码<div class="password-field"><input type="password" value="linguaai" required /><button type="button" id="togglePassword" aria-label="显示密码"><span data-icon="eye"></span></button></div></label><div class="login-options"><label class="check-label"><input type="checkbox" checked /> <span>记住我</span></label><button type="button" class="forgot-btn" data-toast="密码重置链接已发送（模拟）">忘记密码？</button></div><button class="btn btn-primary full-btn" type="submit">登录 LinguaAI <span data-icon="arrow"></span></button></form><div class="login-divider"><span>或使用</span></div><button class="social-btn" type="button" data-toast="Google 登录为演示功能"><span class="google-mark">G</span> 使用 Google 登录</button><p class="login-foot">还没有账号？<button type="button" class="link-inline" data-toast="注册功能为演示功能">创建一个</button></p></div></div>
+    <div class="toast" id="toast" role="status"><span class="toast-icon" data-icon="check"></span><span id="toastText">已完成</span></div>
+    <script src="app.js"></script>
+  </body>
+</html>
